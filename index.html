@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中華健言社100期會外會報名</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:"Microsoft JhengHei",sans-serif;
+}
+
+body{
+background:#fff7f2;
+padding:20px;
+color:#333;
+}
+
+.container{
+max-width:500px;
+margin:auto;
+background:white;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 8px 25px rgba(0,0,0,.15);
+}
+
+.banner{
+background:linear-gradient(135deg,#ff9d3f,#ff6b00);
+padding:30px 20px;
+text-align:center;
+color:white;
+}
+
+.banner h1{
+font-size:28px;
+margin-bottom:10px;
+}
+
+.banner p{
+font-size:15px;
+opacity:0.95;
+}
+
+.content{
+padding:25px;
+}
+
+.info{
+background:#fff2e5;
+border-radius:15px;
+padding:18px;
+margin-bottom:25px;
+line-height:1.8;
+}
+
+.info-title{
+font-size:18px;
+font-weight:bold;
+color:#ff6b00;
+margin-bottom:8px;
+}
+
+.form-group{
+margin-bottom:18px;
+}
+
+label{
+display:block;
+margin-bottom:8px;
+font-weight:bold;
+color:#ff6b00;
+}
+
+input,select{
+width:100%;
+padding:14px;
+border:1px solid #ddd;
+border-radius:12px;
+font-size:16px;
+outline:none;
+margin-bottom:6px;
+}
+
+input:focus,
+select:focus{
+border-color:#ff8c2a;
+}
+
+.radio-group{
+display:flex;
+gap:30px;
+padding-top:8px;
+}
+
+.radio-group label{
+font-weight:normal;
+color:#444;
+}
+
+.note{
+font-size:13px;
+color:#888;
+margin-top:6px;
+}
+
+.dob-row{
+display:flex;
+gap:10px;
+}
+
+.dob-row select{
+flex:1;
+}
+
+button{
+width:100%;
+padding:16px;
+background:#ff7a00;
+border:none;
+border-radius:12px;
+font-size:18px;
+font-weight:bold;
+color:white;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+background:#e56600;
+}
+
+.footer{
+text-align:center;
+padding:18px;
+font-size:13px;
+color:#999;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="banner">
+<h1>🎉 中華健言社100期會外會</h1>
+<p>歡迎一起共聚交流與學習</p>
+</div>
+
+<div class="content">
+
+<div class="info">
+<div class="info-title">📌 活動資訊</div>
+📅 日期：2026/10/10（六）09:00–16:00<br>
+📍 地點：新城風糖休閒園區<br>
+💰 費用：會員550元／非會員700元（含保險）
+</div>
+
+<form>
+
+<div class="form-group">
+<label>姓名</label>
+<input type="text" placeholder="請輸入姓名" required>
+</div>
+
+<div class="form-group">
+<label>手機</label>
+<input type="tel" placeholder="請輸入手機號碼" required>
+</div>
+
+<div class="form-group">
+<label>身分證字號</label>
+<input type="text" placeholder="請輸入身分證字號" required>
+<div class="note">※ 僅供保險投保</div>
+</div>
+
+<div class="form-group">
+<label>出生年月日</label>
+<div class="dob-row">
+<select id="year"></select>
+<select id="month">
+<option value="">月</option>
+</select>
+<select id="day">
+<option value="">日</option>
+</select>
+</div>
+</div>
+
+<div class="form-group">
+<label>所屬社團</label>
+<select required>
+<option value="">請選擇社團</option>
+<option>諄言社</option>
+<option>三重社</option>
+<option>三峽社</option>
+<option>鶯歌社</option>
+<option>竹北社</option>
+<option>新竹社</option>
+<option>中壢社</option>
+<option>湖口社</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>餐點</label>
+
+<div class="radio-group">
+<label><input type="radio" name="meal">葷食</label>
+<label><input type="radio" name="meal">素食</label>
+</div>
+
+</div>
+
+<button type="submit">立即報名</button>
+
+</form>
+
+</div>
+
+<div class="footer">
+中華健言社100期會外會 ❤️
+</div>
+
+</div>
+
+<script>
+// 年份 1930 ~ 2026
+const yearSelect = document.getElementById("year");
+const monthSelect = document.getElementById("month");
+const daySelect = document.getElementById("day");
+
+let currentYear = new Date().getFullYear();
+
+let yearOption = `<option value="">年</option>`;
+for(let y = currentYear; y >= 1930; y--){
+yearOption += `<option value="${y}">${y}</option>`;
+}
+yearSelect.innerHTML = yearOption;
+
+// 月份
+let monthOption = `<option value="">月</option>`;
+for(let m=1;m<=12;m++){
+monthOption += `<option value="${m}">${m}</option>`;
+}
+monthSelect.innerHTML = monthOption;
+
+// 日期
+let dayOption = `<option value="">日</option>`;
+for(let d=1;d<=31;d++){
+dayOption += `<option value="${d}">${d}</option>`;
+}
+daySelect.innerHTML = dayOption;
+</script>
+
+</body>
+</html>
